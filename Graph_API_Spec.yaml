@@ -1,0 +1,976 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Graph API - Endpoints to access data from Entra ID, INtune, and otehr Microsoft solutions.
+  description: Retrieve information from the Graph API
+  version: v1.0.0
+servers:
+  - url: https://graph.microsoft.com/v1.0
+paths:
+  /accessReviews:
+    get:
+      summary: Get a list of accessReview objects.
+      responses:
+        '200':
+          description: OK
+  /accessReviews/{accessReviewId}:
+    get:
+      summary: Get an accessReview object.
+      parameters:
+        - in: path
+          name: accessReviewId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /accessReviews/{accessReviewId}/reviewers:
+    get:
+      summary: Get the reviewers of an access review.
+      parameters:
+        - in: path
+          name: accessReviewId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /accessReviews/{accessReviewId}/decisions:
+    get:
+      summary: Get the decisions of an access review.
+      parameters:
+        - in: path
+          name: accessReviewId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /directory/administrativeUnits:
+    get:
+      summary: Get a list of administrativeUnit objects.
+      responses:
+        '200':
+          description: OK
+  /directory/administrativeUnits/{id}:
+    get:
+      summary: Get an administrativeUnit object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /agreements:
+    get:
+      summary: Get a list of agreement objects.
+      responses:
+        '200':
+          description: OK
+  /agreements/{agreementId}:
+    get:
+      summary: Get an agreement object.
+      parameters:
+        - in: path
+          name: agreementId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /applications:
+    get:
+      summary: Get a list of application objects.
+      responses:
+        '200':
+          description: OK
+  /applications/{applicationId}:
+    get:
+      summary: Get an application object.
+      parameters:
+        - in: path
+          name: applicationId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /auditLogs/directoryAudits:
+    get:
+      summary: Get a list of directoryAudit objects.
+      responses:
+        '200':
+          description: OK
+  /auditLogs/directoryAudits/{id}:
+    get:
+      summary: Get a directoryAudit object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /auditLogs/provisioning:
+    get:
+      summary: Get a list of provisioningObjectSummary objects.
+      responses:
+        '200':
+          description: OK
+  /auditLogs/signIns:
+    get:
+      summary: Get a list of signIn objects.
+      responses:
+        '200':
+          description: OK
+  /auditLogs/signIns/{id}:
+    get:
+      summary: Get a signIn object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/virtualEndpoint/cloudPCs:
+    get:
+      summary: Get a list of cloudPC objects.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/virtualEndpoint/cloudPCs/{id}:
+    get:
+      summary: Get a cloudPC object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /oauth2PermissionGrants:
+    get:
+      summary: Get a list of oAuth2PermissionGrant objects.
+      responses:
+        '200':
+          description: OK
+  /oauth2PermissionGrants/{id}:
+    get:
+      summary: Get an oAuth2PermissionGrant object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /devices:
+    get:
+      summary: Get a list of device objects.
+      responses:
+        '200':
+          description: OK
+  /devices/{id}:
+    get:
+      summary: Get a device object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement:
+    get:
+      summary: Get the deviceAppManagement singleton.
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement/androidManagedAppProtections:
+    get:
+      summary: Get a list of androidManagedAppProtection objects.
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement/androidManagedAppProtections/{id}:
+    get:
+      summary: Get an androidManagedAppProtection object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement/defaultManagedAppProtections:
+    get:
+      summary: Get a list of defaultManagedAppProtection objects.
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement/defaultManagedAppProtections/{id}:
+    get:
+      summary: Get a defaultManagedAppProtection object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement/enterpriseCodeSigningCertificates:
+    get:
+      summary: Get a list of enterpriseCodeSigningCertificate objects.
+      responses:
+        '200':
+          description: OK
+  /deviceAppManagement/enterpriseCodeSigningCertificates/{id}:
+    get:
+      summary: Get an enterpriseCodeSigningCertificate object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/configurationPolicies:
+    get:
+      summary: Get a list of configurationPolicy objects.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/configurationPolicies/{id}:
+    get:
+      summary: Get a configurationPolicy object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/managedDevices:
+    get:
+      summary: Get a list of managedDevice objects.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/managedDevices/{id}:
+    get:
+      summary: Get a managedDevice object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceManagement:
+    get:
+      summary: Get the deviceManagement singleton.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/resourceOperations:
+    get:
+      summary: Get a list of resourceOperation objects.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/resourceOperations/{resourceOperationId}:
+    get:
+      summary: Get a resourceOperation object.
+      parameters:
+        - in: path
+          name: resourceOperationId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/roleAssignments:
+    get:
+      summary: Get a list of deviceAndAppManagementRoleAssignment objects.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignmentId}:
+    get:
+      summary: Get a deviceAndAppManagementRoleAssignment object.
+      parameters:
+        - in: path
+          name: deviceAndAppManagementRoleAssignmentId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/roleDefinitions:
+    get:
+      summary: Get a list of deviceAndAppManagementRoleDefinition objects.
+      responses:
+        '200':
+          description: OK
+  /deviceManagement/roleDefinitions/{roleDefinitionId}:
+    get:
+      summary: Get a deviceAndAppManagementRoleDefinition object.
+      parameters:
+        - in: path
+          name: roleDefinitionId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /directory/recommendations:
+    get:
+      summary: Get a list of recommendation objects.
+      responses:
+        '200':
+          description: OK
+  /me/messages:
+    get:
+      summary: Get a list of message objects in the signed-in user's mailbox.
+      responses:
+        '200':
+          description: OK
+  /users/{id | userPrincipalName}/messages:
+    get:
+      summary: Get a list of message objects in a user's mailbox.
+      parameters:
+        - in: path
+          name: id | userPrincipalName
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /me/mailFolders/{id}/messages:
+    get:
+      summary: Get a list of message objects in a mail folder of the signed-in user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id | userPrincipalName}/mailFolders/{id}/messages:
+    get:
+      summary: Get a list of message objects in a mail folder of a user.
+      parameters:
+        - in: path
+          name: id | userPrincipalName
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/entitlementManagement/accessPackages:
+    get:
+      summary: Get a list of accessPackage objects.
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/entitlementManagement/accessPackages/{id}:
+    get:
+      summary: Get an accessPackage object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/entitlementManagement/assignmentPolicies:
+    get:
+      summary: Get a list of assignmentPolicy objects.
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/entitlementManagement/assignmentPolicies/{id}:
+    get:
+      summary: Get an assignmentPolicy object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/entitlementManagement/assignments:
+    get:
+      summary: Get a list of assignment objects.
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/entitlementManagement/assignments/{id}:
+    get:
+      summary: Get an assignment object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /groups:
+    get:
+      summary: Get a list of group objects.
+      responses:
+        '200':
+          description: OK
+  /groups/{id}:
+    get:
+      summary: Get a group object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /groups/{id}/members:
+    get:
+      summary: Get a list of directoryObject objects that are members of a group.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /groups/{id}/owners:
+    get:
+      summary: Get a list of directoryObject objects that are owners of a group.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /groups/{id}/conversations:
+    get:
+      summary: Get a list of conversation objects in a group.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /groups/{id}/events:
+    get:
+      summary: Get a list of event objects in a group calendar.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /groups/{id}/transitiveMembers:
+    get:
+      summary: Get a list of directoryObject objects that are transitive members of a group.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityProtection/riskDetections:
+    get:
+      summary: Get a list of riskDetection objects.
+      responses:
+        '200':
+          description: OK
+  /identityProtection/riskDetections/{id}:
+    get:
+      summary: Get a riskDetection object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityProtection/riskyServicePrincipals:
+    get:
+      summary: Get a list of riskyServicePrincipal objects.
+      responses:
+        '200':
+          description: OK
+  /identityProtection/riskyUsers:
+    get:
+      summary: Get a list of riskyUser objects.
+      responses:
+        '200':
+          description: OK
+  /identityProtection/riskyUsers/{id}:
+    get:
+      summary: Get a riskyUser object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /organization:
+    get:
+      summary: Get a list of organization objects.
+      responses:
+        '200':
+          description: OK
+  /me:
+    get:
+      summary: Get the signed-in user.
+      responses:
+        '200':
+          description: OK
+  /users/{id | userPrincipalName}:
+    get:
+      summary: Get a user object.
+      parameters:
+        - in: path
+          name: id | userPrincipalName
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /roleManagement/directory/roleAssignmentSchedules:
+    get:
+      summary: Get a list of unifiedRoleAssignmentSchedule objects.
+      responses:
+        '200':
+          description: OK
+  /roleManagement/directory/roleEligibilitySchedules:
+    get:
+      summary: Get a list of unifiedRoleEligibilitySchedule objects.
+      responses:
+        '200':
+          description: OK
+  /roleManagement/directory/roleDefinitions:
+    get:
+      summary: Get a list of unifiedRoleDefinition objects.
+      responses:
+        '200':
+          description: OK
+  /roleManagement/directory/roleAssignments:
+    get:
+      summary: Get a list of unifiedRoleAssignment objects.
+      responses:
+        '200':
+          description: OK
+  /policies/roleManagementPolicies:
+    get:
+      summary: Get a list of unifiedRoleManagementPolicy objects.
+      responses:
+        '200':
+          description: OK
+  /security/alerts_v2:
+    get:
+      summary: Get a list of alert objects (v2).
+      responses:
+        '200':
+          description: OK
+  /security/alerts_v2/{id}:
+    get:
+      summary: Get an alert object (v2).
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /security/incidents:
+    get:
+      summary: Get a list of incident objects.
+      responses:
+        '200':
+          description: OK
+  /security/incidents/{id}:
+    get:
+      summary: Get an incident object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/articles:
+    get:
+      summary: Get a list of tiArticle objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/intelligenceProfiles:
+    get:
+      summary: Get a list of tiIntelligenceProfile objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/hosts:
+    get:
+      summary: Get a list of tiHost objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/hostCookies:
+    get:
+      summary: Get a list of tiHostCookie objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/passiveDnsRecords:
+    get:
+      summary: Get a list of tiPassiveDnsRecord objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/hostReputations:
+    get:
+      summary: Get a list of tiHostReputation objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/hostComponents:
+    get:
+      summary: Get a list of tiHostComponent objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/hostPairs:
+    get:
+      summary: Get a list of tiHostPair objects.
+      responses:
+        '200':
+          description: OK
+  /security/threatIntelligence/hostPorts:
+    get:
+      summary: Get a list of tiHostPort objects.
+      responses:
+        '200':
+          description: OK
+  /users:
+    get:
+      summary: Get a list of user objects.
+      responses:
+        '200':
+          description: OK
+  /users/{id}/manager:
+    get:
+      summary: Get the manager of a user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id}/directReports:
+    get:
+      summary: Get a list of users who report directly to another user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id}/memberOf:
+    get:
+      summary: Get a list of directory objects that a user is a member of.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id}/transitiveMemberOf:
+    get:
+      summary: Get a list of directory objects that a user is a transitive member of.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id}/photo/$value:
+    get:
+      summary: Get the raw content of the profile photo of a user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id}/licenseDetails:
+    get:
+      summary: Get a list of licenseDetails objects assigned to a user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id}/settings:
+    get:
+      summary: Get the settings of a user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /me/authentication/methods:
+    get:
+      summary: Get a list of authentication methods for the signed-in user.
+      responses:
+        '200':
+          description: OK
+  /me/authentication/methods/{id}:
+    get:
+      summary: Get an authentication method for the signed-in user.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id | userPrincipalName}/authentication/methods:
+    get:
+      summary: Get a list of authentication methods for a user.
+      parameters:
+        - in: path
+          name: id | userPrincipalName
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /users/{id | userPrincipalName}/authentication/methods/{id}:
+    get:
+      summary: Get an authentication method for a user.
+      parameters:
+        - in: path
+          name: id | userPrincipalName
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identity/conditionalAccess/policies:
+    get:
+      summary: Get a list of conditionalAccessPolicy objects.
+      responses:
+        '200':
+          description: OK
+  /identity/conditionalAccess/policies/{id}:
+    get:
+      summary: Get a conditionalAccessPolicy object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identity/conditionalAccess/namedLocations:
+    get:
+      summary: Get a list of namedLocation objects.
+      responses:
+        '200':
+          description: OK
+  /identity/conditionalAccess/namedLocations/{id}:
+    get:
+      summary: Get a namedLocation object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/lifecycleWorkflows/workflows:
+    get:
+      summary: Get a list of workflow objects.
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/lifecycleWorkflows/workflows/{id}:
+    get:
+      summary: Get a workflow object.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/lifecycleWorkflows/workflows/{id}/tasks:
+    get:
+      summary: Get a list of task objects in a workflow.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/lifecycleWorkflows/workflows/{id}/tasks/{taskId}:
+    get:
+      summary: Get a task object in a workflow.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/lifecycleWorkflows/workflows/{id}/runs:
+    get:
+      summary: Get a list of run objects for a workflow.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /identityGovernance/lifecycleWorkflows/workflows/{id}/runs/{runId}:
+    get:
+      summary: Get a run object for a workflow.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: runId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
