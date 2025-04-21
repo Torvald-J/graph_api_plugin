@@ -1,0 +1,134 @@
+openapi: 3.0.1
+info:
+  title: Microsoft Graph - Post-Compromise Investigation APIs
+  version: 1.0.0
+  description: >
+    A subset of Microsoft Graph API endpoints used for investigating post-compromise activity of a user,
+    including rule changes, phishing email detection, MFA bypasses, and sign-in anomalies.
+
+servers:
+  - url: https://graph.microsoft.com/v1.0
+
+paths:
+
+  /users/{userId}/mailFolders/inbox/messageRules:
+    get:
+      summary: List inbox message rules
+      description: Retrieves all inbox rules defined for a user. Use this to identify suspicious auto-forward or delete rules.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+          description: The ID or userPrincipalName of the user.
+      responses:
+        '200':
+          description: A list of inbox message rules.
+        '401':
+          description: Unauthorized
+
+  /users/{userId}/messages:
+    get:
+      summary: List user messages (filter for sent phishing emails)
+      description: Retrieves messages from the user's mailbox. Can filter by sent date and search for URLs or suspicious content.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+          description: The ID or userPrincipalName of the user.
+        - in: query
+          name: $filter
+          required: false
+          schema:
+            type: string
+          description: Filter expression (e.g., sentDateTime ge datetime'2024-04-01T00:00:00Z').
+        - in: query
+          name: $search
+          required: false
+          schema:
+            type: string
+          description: Search expression, e.g., "http" to find messages containing links.
+      responses:
+        '200':
+          description: A collection of messages.
+        '401':
+          description: Unauthorized
+
+  /users/{userId}/mailFolders/sentitems/messages:
+    get:
+      summary: List sent emails
+      description: Retrieves emails from the user's Sent Items folder.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+          description: The ID or userPrincipalName of the user.
+      responses:
+        '200':
+          description: Sent email messages.
+        '401':
+          description: Unauthorized
+
+  /users/{userId}/messages/{messageId}/attachments:
+    get:
+      summary: List attachments for a specific email
+      description: Retrieves the attachments of a specific email message.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+          description: The ID or userPrincipalName of the user.
+        - in: path
+          name: messageId
+          required: true
+          schema:
+            type: string
+          description: The ID of the email message.
+      responses:
+        '200':
+          description: List of attachments.
+        '401':
+          description: Unauthorized
+
+  /auditLogs/signIns:
+    get:
+      summary: List sign-in logs
+      description: Retrieves sign-in logs, which include MFA status, risk levels, and location/device information.
+      parameters:
+        - in: query
+          name: $filter
+          required: false
+          schema:
+            type: string
+          description: OData filter to limit results, e.g., `userId eq '{userId}'`
+      responses:
+        '200':
+          description: Sign-in event logs.
+        '401':
+          description: Unauthorized
+
+  /identityProtection/riskyUsers/{userId}:
+    get:
+      summary: Get risky user details
+      description: Retrieves risk assessments for a user based on Identity Protection detections (e.g., impossible travel, password spray).
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+          description: The ID or userPrincipalName of the user.
+      responses:
+        '200':
+          description: Risky user details.
+        '404':
+          description: User not found or not marked as risky.
+        '401':
+          description: Unauthorized
